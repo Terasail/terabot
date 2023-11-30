@@ -23,5 +23,7 @@ pip install requests
 pip install mwparserfromhell
 pip install wikitextparser
 
+pip install pywikibot
+
 # or, install all packages from src/requirements.txt
 # pip install -r src/requirements.txt
