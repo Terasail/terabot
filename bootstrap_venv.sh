@@ -15,15 +15,10 @@ source pyvenv/bin/activate
 # upgrade pip inside the venv and add support for the wheel package format
 pip install -U pip wheel
 
-# Change the following section depending on what your tool needs!
-
 # install some concrete packages
-# pip install pyyaml
 pip install requests
+pip install pyyaml
 pip install mwparserfromhell
 pip install wikitextparser
-
 pip install pywikibot
-
-# or, install all packages from src/requirements.txt
-# pip install -r src/requirements.txt
+pip install mwoauth
