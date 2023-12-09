@@ -16,6 +16,7 @@ if len(pages) > 0:
 	for page in pages:
 		wikitext += "* [[:" + page.title() + "]]\n"
 
+summary = "Update: " + str(len(pages)) + " file rename requests"
 wikitext = "{{Bots|deny=luckyrename}}\n" + wikitext.strip()
 targetPage = pywikibot.Page(site, "User:TeraBot/FileRequests")
 curTime = time.strftime("%y/%m/%d %X", time.localtime())
@@ -23,7 +24,7 @@ outMsg = curTime + " | File requests: "
 if targetPage.text != wikitext:
 	outMsg += "Change"
 	targetPage.text = wikitext
-	targetPage.save("Updated list of file requests")
+	targetPage.save(summary)
 else:
 	outMsg += "No change"
 print(outMsg)
