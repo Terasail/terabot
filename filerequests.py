@@ -1,6 +1,7 @@
 import pywikibot
 import time
 
+time.sleep(60)
 site = pywikibot.Site("en", "wikipedia")
 site.login()
 pages = []
@@ -16,15 +17,13 @@ if len(pages) > 0:
 	for page in pages:
 		wikitext += "* [[:" + page.title() + "]]\n"
 
-summary = "Update: " + str(len(pages)) + " file rename requests"
 wikitext = "{{Bots|deny=luckyrename}}\n" + wikitext.strip()
 targetPage = pywikibot.Page(site, "User:TeraBot/FileRequests")
-curTime = time.strftime("%y/%m/%d %X", time.localtime())
-outMsg = curTime + " | File requests: "
+outMsg = time.strftime("%y/%m/%d %X", time.localtime()) + " | File requests: "
 if targetPage.text != wikitext:
 	outMsg += "Change"
 	targetPage.text = wikitext
-	targetPage.save(summary)
+	targetPage.save("Update: " + str(len(pages)) + " file rename requests")
 else:
 	outMsg += "No change"
 print(outMsg)
