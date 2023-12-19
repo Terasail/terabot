@@ -1,9 +1,7 @@
 import pywikibot
 import time
 import re
-import os
 
-os.system('cls')
 site = pywikibot.Site("en", "wikipedia")
 site.login()
 pages = []
