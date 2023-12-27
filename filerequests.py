@@ -19,7 +19,7 @@ if len(pages) > 0:
 		editSummary += "1 file rename request"
 		wikitext = "There is currently 1 file waiting to be renamed:" + wikitext
 	else:
-		editSummary += str(len(pages)) + " file rename request"
+		editSummary += str(len(pages)) + " file rename requests"
 		wikitext = "There are currently " + str(len(pages)) + " files waiting to be renamed:" + wikitext
 	for page in pages:
 		wikitext += "\n|-\n|[[:" + page.title() + "]]\n"
